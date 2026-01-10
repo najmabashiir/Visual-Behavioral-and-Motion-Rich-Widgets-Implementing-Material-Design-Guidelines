@@ -12,8 +12,24 @@ class MysecondScreen extends StatelessWidget {
         child: Column(
           children: [
             TextField(
-
-            )
+              controller: mycontroller,
+              decoration: const InputDecoration(
+                border: OutlineInputBorder(),
+                hintText: "Enter Your Name",
+              ),
+            ),
+            SizedBox(height: 20,),
+            ElevatedButton(
+              child: Text('Next'),
+              onPressed: (){
+              Navigator.push(
+                context, MaterialPageRoute(builder:(context)=>SecondScreen(
+                text: mycontroller.text,
+              ),
+              ),
+              );
+            },
+            ),
           ],
         ),
       ),
