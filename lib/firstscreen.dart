@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'second_screen.dart';
 
-class MysecondScreen extends StatelessWidget {
-  TextEditingController mycontroller=TextEditingController();
+class MyfirstScreen extends StatelessWidget {
+  // TextEditingController mycontroller=TextEditingController();
+  var mycontroller = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -15,12 +16,13 @@ class MysecondScreen extends StatelessWidget {
               controller: mycontroller,
               decoration: const InputDecoration(
                 border: OutlineInputBorder(),
+                // floatingLabelBehavior: FloatingLabelBehavior.never,
                 hintText: "Enter Your Name",
               ),
             ),
             SizedBox(height: 20,),
             ElevatedButton(
-              child: Text('Next'),
+              child: Text('Go to Next Screen'),
               onPressed: (){
               Navigator.push(
                 context, MaterialPageRoute(builder:(context)=>SecondScreen(
@@ -28,8 +30,7 @@ class MysecondScreen extends StatelessWidget {
               ),
               ),
               );
-            },
-            ),
+            },),
           ],
         ),
       ),
